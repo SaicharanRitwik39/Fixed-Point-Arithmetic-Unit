@@ -1,7 +1,3 @@
-// Code your testbench here
-// or browse Examples
-// Code your testbench here
-// or browse Examples
 module Q8_8_AddSub_TB;
 
   reg [15:0] operand1;

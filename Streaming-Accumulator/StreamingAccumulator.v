@@ -1,3 +1,4 @@
+// Code your design here
 module StreamingAccumulator (
   input clk,
   input reset,

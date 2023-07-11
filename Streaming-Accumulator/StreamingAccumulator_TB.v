@@ -1,3 +1,5 @@
+// Code your testbench here
+// or browse Examples
 module StreamingAccumulator_TB;
 
   reg clk;
@@ -15,10 +17,16 @@ module StreamingAccumulator_TB;
 
   // Clock generator
   always #5 clk = ~clk;
+  
+  initial begin
+    $dumpfile("dump.vcd");
+    $dumpvars(0,StreamingAccumulator_TB);
+  end
 
   // Test stimulus
   initial begin
     // Initialize inputs
+    clk=0;
     reset = 1;
     data_in = 0;
 

@@ -2,3 +2,4 @@
 
 * Addition and Subtraction.
 * Square Root.
+* Streaming Accumulator.

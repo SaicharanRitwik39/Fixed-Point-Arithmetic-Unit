@@ -7,7 +7,7 @@ module StreamingAccumulator (
 
   reg [31:0] accumulator;
 
-  always @(posedge clk or posedge reset) begin
+  always @(posedge clk) begin
     if (reset == 1) begin
       accumulator <= 0;
     end 

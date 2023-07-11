@@ -56,9 +56,9 @@ module StreamingAccumulator_TB;
 
     // Check the accumulated sum
     if (sum_out === 16'b1000100110010110) begin
-      $display("Test passed: Accumulated sum is correct: %b", sum_out);
+      $display("Test passed: Accumulated sum is correct: %d", sum_out);
     end else begin
-      $display("Test failed: Accumulated sum is incorrect: %b", sum_out);
+      $display("Test failed: Accumulated sum is incorrect: %d", sum_out);
     end
 
     // End the simulation

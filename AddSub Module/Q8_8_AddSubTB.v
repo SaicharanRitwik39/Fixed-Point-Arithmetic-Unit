@@ -3,7 +3,7 @@ module Q8_8_AddSub_TB;
   reg [15:0] operand1;
   reg [15:0] operand2;
   reg add_sub;
-  wire [15:0] result;
+  wire [16:0] result;
 
   // Instantiate the unit under test
   Q8_8_AddSub dut (

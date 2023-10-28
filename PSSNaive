@@ -1,0 +1,38 @@
+module pss_detection (
+    input wire clk,                 // System clock
+    input wire [15:0] samples,      // I/Q samples (complex)
+    output wire pss_detected        // PSS detection output
+);
+
+// Define PSS sequence
+reg [15:0] pss_sequence [0:61];
+initial begin
+    // Initialize the PSS sequence with a simplified pattern
+    // In practice, this sequence is more complex and specific to LTE
+    pss_sequence[0] = 16'b1101101101011010;
+    // ...
+
+    // Initialize other elements of the sequence
+    // ...
+
+end
+
+// PSS detection logic (simplified correlation)
+reg [15:0] correlation_result;
+reg [5:0] sample_index;
+
+always @(posedge clk) begin
+    if (sample_index < 62) begin
+        correlation_result <= samples * pss_sequence[sample_index];
+        sample_index <= sample_index + 1;
+    end else begin
+        sample_index <= 0;
+    end
+end
+
+// PSS detection logic (simplified threshold)
+wire [15:0] correlation_threshold = 16'hXXXX; // Set the threshold value
+
+assign pss_detected = (correlation_result > correlation_threshold);
+
+endmodule
